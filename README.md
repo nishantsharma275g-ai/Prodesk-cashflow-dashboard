@@ -4,6 +4,11 @@ A modern and interactive **Cash Flow Dashboard** built using **HTML, CSS, and Va
 
 ---
 
+## 🚀 Live Demo
+
+https://prodesk-cashflow-dashboard.vercel.app/
+---
+
 ## ✨ Features
 
 ### Phase 1 – Base MVP
@@ -56,7 +61,7 @@ Prodesk-CashFlow-Dashboard/
 │
 ├── assets/
 │   ├── beep-warning-sound.mp3
-│   
+│
 ├── index.html
 ├── style.css
 ├── script.js
