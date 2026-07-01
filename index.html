@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prodesk Cash Flow Dashboard</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>💰 Cash Flow Dashboard</h1>
+        <p>Track your salary and expenses in real time</p>
+      </header>
+      <div id="warningBanner" class="warning-banner">
+        ⚠️ Warning! Your remaining balance is below 10% of your salary.
+      </div>
+
+      <!-- FORM -->
+
+      <section class="form-card">
+        <h2>Add Expense</h2>
+
+        <p id="errorMessage"></p>
+
+        <form id="expenseForm">
+          <input type="number" id="salary" placeholder="Monthly Salary" />
+
+          <input type="text" id="expenseName" placeholder="Expense Name" />
+
+          <input
+            type="number"
+            id="expenseAmount"
+            placeholder="Expense Amount"
+          />
+
+          <button type="submit">➕ Add Expense</button>
+          <button type="button" id="downloadReport">📄 Download Report</button>
+        </form>
+      </section>
+      <div class="currency-box">
+        <label for="currencySelect"> Currency </label>
+
+        <select id="currencySelect">
+          <option value="INR">INR (₹)</option>
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+        </select>
+      </div>
+
+      <!-- DASHBOARD -->
+
+      <section class="cards">
+        <div class="card salary-card">
+          <h3>Salary</h3>
+
+          <span id="salaryDisplay">₹0</span>
+        </div>
+
+        <div class="card expense-card">
+          <h3>Total Expenses</h3>
+
+          <span id="totalExpenseDisplay">₹0</span>
+        </div>
+
+        <div class="card balance-card">
+          <h3>Remaining Balance</h3>
+
+          <span id="balanceDisplay">₹0</span>
+        </div>
+      </section>
+
+      <section class="dashboard">
+        <div class="expense-section">
+          <h2>Expense List</h2>
+
+          <ul id="expenseList"></ul>
+        </div>
+
+        <div class="chart-section">
+          <h2>Expense Overview</h2>
+
+          <div class="chart-container">
+            <canvas id="expenseChart"></canvas>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
