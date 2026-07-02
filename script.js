@@ -1,32 +1,13 @@
-/*
-=========================================
-Prodesk Cash Flow Dashboard
 
-Features
-✔ Add Expenses
-✔ Delete Expenses
-✔ Local Storage
-✔ Chart.js Pie Chart
-✔ PDF Report
-✔ Low Balance Warning
-✔ Warning Sound
-
-Developer:
-Nishant Sharma
-=========================================
-*/
-// =====================================
-// Application State
-// =====================================
-
-let currentSalary = 0;
-let expenseChart = null;
-const expenses = [];
-let warningPlayed = false;
+const appState = {
+    salary: 0,
+    expenses: [],
+    currentCurrency: "INR",
+    exchangeRate: 1,
+    warningPlayed: false,
+    chart: null
+};
 const warningSound = new Audio("./assets/beep-warning-sound.mp3");
-let currentCurrency = "INR";
-
-let exchangeRate = 1;
 const currencySymbols = {
 
     INR: "Rs.",
